@@ -1,31 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Articles.css';
+import { Article } from './Article'
 
-export const Articles = () => {
+export function Articles() {
   const [storyIds, setStoryIds] = useState([]);
-  const [stories, setStories] = useState([]);
 
-  fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-    .then(response => response.json())
-    .then(data => setStoryIds(data.slice(0, 10)));
-
-  storyIds.forEach(id => {
-    fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-      .then(response => response.json())
-      .then(data => {
-        setStories(prevStories => [...prevStories, data]);
+  useEffect(() => {
+    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        setStoryIds(data.slice(0, 10));
+      })
+      .catch(function(error) {
+        console.error(error);
       });
-  });
+  }, []);
 
-return (
-    <ol>
-      {stories.map(story => {
-        return (
-          <li key={story.id}>
-            <a href={story.url}>{story.title}</a>
-          </li>
-        );
-      })}
-    </ol>
-);
+  return (
+      <ol>
+        {storyIds.map(id => <Article id={id}/>)}
+      </ol>
+  );
 }

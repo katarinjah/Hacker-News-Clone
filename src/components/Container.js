@@ -1,10 +1,10 @@
-import './Container.css'
-import { Articles } from './Articles.js'
 
-export const  Container = () => {
+import { Articles } from './Articles.js';
+
+export const Container = () => {
     return (
-        <Container className="container-fluid">
+        <div className="container-fluid">
             <Articles />
-        </Container>
+        </div>
     )
 }

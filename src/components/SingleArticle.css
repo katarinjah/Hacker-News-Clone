@@ -6,15 +6,42 @@ li {
     padding: 5px;
 }
 
+li:first-child {
+    padding-top: 20px;
+}
+
 a {
+    color: #FF5F15;
     text-decoration: none;
     font-size: 1.2em;
+    font-weight: 500;
 }
 
 a:hover {
     cursor: pointer;
+    color: #22A7F0;
 }
 
-a:visited {
-    color: purple;
+span {
+    font-size: 0.8em;
+}
+
+#score, .icon {
+    color: grey;
+}
+
+#comments {
+    color: white;
+    background-color: #22A7F0;
+    border-radius: 10px;
+    padding: 1px 3px 1px 3px;
+}
+
+#author, #date {
+    color: #FF5F15;
+}
+
+hr {
+    width: 90%;
+    padding-left: 10%;
 }

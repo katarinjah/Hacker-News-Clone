@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './Articles.css';
 import { SingleArticle } from './SingleArticle'
 
 export function Articles() {

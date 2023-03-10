@@ -6,5 +6,5 @@ export const Container = () => {
         <div className="container-fluid">
             <Articles />
         </div>
-    )
+    );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Articles.css';
-import { Article } from './Article'
+import { SingleArticle } from './SingleArticle'
 
 export function Articles() {
   const [storyIds, setStoryIds] = useState([]);
@@ -20,7 +20,7 @@ export function Articles() {
 
   return (
       <ol>
-        {storyIds.map(id => <Article id={id}/>)}
+        {storyIds.map(id => <SingleArticle id={id}/>)}
       </ol>
   );
 }

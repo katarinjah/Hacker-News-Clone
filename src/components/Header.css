@@ -1,6 +1,10 @@
 .navbar {
     text-align: left;
     color: white;
-    background-color: darkorange;
-    height: 20%;
+    background-color: darkorange !important;
+}
+
+#header {
+    padding: 10px;
+    font-size: 1.5em;
 }
